@@ -1,24 +1,47 @@
-# README
+# inventist
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Developmernt guide
 
-Things you may want to cover:
+### Setup for development
 
-* Ruby version
 
-* System dependencies
+build docker image:
 
-* Configuration
+```
+$ docker-compose build
+```
 
-* Database creation
+install dependencies:
 
-* Database initialization
+```
+$ docker-compose run --rm app bundle i
+$ docker-compose run --rm app yarn
+```
 
-* How to run the test suite
+create database and migrations:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ docker-compose run --rm app rails db:create
+$ docker-compose run --rm app rails db:migrate
+```
 
-* Deployment instructions
+setup data fixture:
 
-* ...
+```
+$ docker-compose run --rm app rails db:seed
+```
+
+### run applications
+
+run dev server:
+
+```
+$ docker-compose up
+$ open http://localhost:3000/
+```
+
+launch psql client:
+
+```
+$ docker-compose run --rm app rails db
+```

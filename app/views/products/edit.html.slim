@@ -1,0 +1,12 @@
+div class="title"
+  = @product.name
+
+
+div class="content"
+  == render 'form'
+
+div class="content"
+
+  div class="columns"
+    div class="column"
+      = link_to 'この商品を削除', @product, class: 'button is-danger', data: { confirm: '削除してもよいでしょうか？' }, method: :delete

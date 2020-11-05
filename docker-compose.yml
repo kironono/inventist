@@ -19,7 +19,7 @@ services:
       DB_PORT: 5432
       DB_USER: "postgres"
       DB_PASS: ""
-      DB_NAME: "auriga"
+      DB_NAME: "inventist"
     tty: true
     stdin_open: true
     command: "rails s -b 0.0.0.0 -p 3000"
