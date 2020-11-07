@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :products, except: [:show]
+
+  namespace :api, {format: 'json'} do
+    namespace :private do
+      resource :products, only: [:update]
+    end
+  end
 end

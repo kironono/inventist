@@ -1,61 +1,57 @@
+= javascript_pack_tag 'products'
 
-div class="content"
-  div class="level is-mobile"
-    div class="level-left"
-    div class="level-right"
-      = link_to '新規登録', new_product_path, class: 'button is-link'
+#products
+  div class="content"
+    div class="level is-mobile"
+      div class="level-left"
+      div class="level-right"
+        = link_to '新規登録', new_product_path, class: 'button is-link'
 
 
-div class="content"
-  = search_form_for @search do |f|
-    div class="field is-horizontal"
-      div class="field-label is-normal"
-        label class="label"
-          | 名前
-      div class="field-body"
-        div class="field"
-          p class="control"
-            = f.search_field :name_cont, class: 'input'
-    div class="field is-horizontal"
-      div class="field-label is-normal"
-        label class="label"
-          | ステータス
-      div class="field-body"
-        div class="field"
-          p class="control select"
-            = f.select :status_eq, Product.statuses, include_blank: true
-    div class="field is-horizontal"
-      div class="field-label is-normal"
-        label class="label"
-      div class="field-body"
-        div class="field is-grouped"
-          p class="control"
-            = f.submit '検索', class: 'button is-link'
-          p class="control"
-            = link_to 'キャンセル', products_path, class: 'button is-link is-light'
+  div class="content"
+    = search_form_for @search do |f|
+      div class="field is-horizontal"
+        div class="field-label is-normal"
+          label class="label"
+            | 名前
+        div class="field-body"
+          div class="field"
+            p class="control"
+              = f.search_field :name_cont, class: 'input'
+      div class="field is-horizontal"
+        div class="field-label is-normal"
+          label class="label"
+            | ステータス
+        div class="field-body"
+          div class="field"
+            p class="control select"
+              = f.select :status_eq, Product.statuses, include_blank: true
+      div class="field is-horizontal"
+        div class="field-label is-normal"
+          label class="label"
+        div class="field-body"
+          div class="field is-grouped"
+            p class="control"
+              = f.submit '検索', class: 'button is-link'
+            p class="control"
+              = link_to 'キャンセル', products_path, class: 'button is-link is-light'
 
-div class="content"
-  - unless @products.present?
-    p
-      | 該当する項目はありません
-  - else
-    = paginate @products
+  div class="content"
+    - unless @products.present?
+      p
+        | 該当する項目はありません
+    - else
+      = paginate @products
 
-    - @products.each do |product|
-      article class="box"
-        div class="level is-mobile"
-          div class="level-left"
-            p class="title"
-              = product.name
-          div class="level-right"
-            = link_to '編集', edit_product_path(product), class: 'button'
-        div class="content"
+      - @products.each do |product|
+        article class="box"
           div class="level is-mobile"
-            button class="button level-item #{product_status_color(product, 'in_stock')}"
-              | 在庫あり
-            button class="button level-item #{product_status_color(product, 'few_in_stock')}"
-              | 残りわずか
-            button class="button level-item #{product_status_color(product, 'out_of_stock')}"
-              | 在庫切れ
+            div class="level-left"
+              p class="title"
+                = product.name
+            div class="level-right"
+              = link_to '編集', edit_product_path(product), class: 'button'
+          div class="content"
+            product-status-control product-id=product.id initial-status=product.status
 
-    = paginate @products
+      = paginate @products
