@@ -4,7 +4,7 @@ version: "2"
 services:
   app:
     build:
-      context: "docker/app"
+      context: "containers/app"
       dockerfile: "Dockerfile"
     volumes:
       - ".:/app"
@@ -25,7 +25,7 @@ services:
     command: "rails s -b 0.0.0.0 -p 3000"
   db:
     build:
-      context: "docker/db"
+      context: "containers/db"
       dockerfile: "Dockerfile"
     volumes:
       - "db-data:/var/lib/postgresql/data"
