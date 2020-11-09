@@ -97,7 +97,7 @@ production:
   # database: <%= ENV.fetch("DB_NAME") { "app" } %>_production
   # username: app
   # password: <%= ENV['APP_DATABASE_PASSWORD'] %>
-  database: <%= ENV.fetch("DB_NAME") { "app" } %>_development
+  database: <%= ENV.fetch("DB_NAME") { "app" } %>
   username: <%= ENV.fetch("DB_USER") { "app" } %>
   password: <%= ENV.fetch("DB_PASS") { "pass" } %>
   host: <%= ENV.fetch("DB_HOST") { "host" } %>
