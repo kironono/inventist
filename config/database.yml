@@ -94,6 +94,11 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV.fetch("DB_NAME") { "app" } %>_production
-  username: app
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  # database: <%= ENV.fetch("DB_NAME") { "app" } %>_production
+  # username: app
+  # password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  database: <%= ENV.fetch("DB_NAME") { "app" } %>_development
+  username: <%= ENV.fetch("DB_USER") { "app" } %>
+  password: <%= ENV.fetch("DB_PASS") { "pass" } %>
+  host: <%= ENV.fetch("DB_HOST") { "host" } %>
+  port: <%= ENV.fetch("DB_PORT") { 5432 } %>
