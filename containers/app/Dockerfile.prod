@@ -29,8 +29,17 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
+COPY package.json /app/package.json
+COPY yarn.lock /app/yarn.lock
+
+RUN yarn
+
 COPY . .
 
 EXPOSE 3000
 
-CMD RAILS_ENV=production rails s -p 3000
+ENV RAILS_ENV production
+
+ENTRYPOINT ["sh","entrypoint.sh"]
+
+CMD ["rails","s","-p","3000"]
