@@ -25,7 +25,7 @@
         div class="field-body"
           div class="field"
             p class="control select"
-              = f.select :status_eq, Product.statuses, include_blank: true
+              = f.select :status_eq, Product.statuses.map{|key, val| [t(".select.#{key}"), key] }, include_blank: true
       div class="field is-horizontal"
         div class="field-label is-normal"
           label class="label"

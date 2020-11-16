@@ -17,7 +17,7 @@
       | ステータス
     div class="control"
       div class="select"
-        = f.select :status, Product.statuses
+        = f.select :status, Product.statuses.map{|key, val| [t(".select.#{key}"), key] }
 
   div class="field is-grouped"
     div class="control"

@@ -1,0 +1,12 @@
+ja:
+  products:
+    index:
+      select:
+        in_stock: '在庫あり'
+        few_in_stock: '残りわずか'
+        out_of_stock: '在庫切れ'
+    form:
+      select:
+        in_stock: '在庫あり'
+        few_in_stock: '残りわずか'
+        out_of_stock: '在庫切れ'

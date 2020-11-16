@@ -17,5 +17,7 @@ module App
     # the framework and any gems in your application.
     
     config.active_record.schema_format = :sql
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end
