@@ -8,13 +8,13 @@
 
   div class="field"
     label class="label"
-      | 名前
+      = t('.label.name')
     div class="control"
       = f.text_field :name, class: 'input'
 
   div class="field"
     label class="label"
-      | ステータス
+      = t('.label.status')
     div class="control"
       div class="select"
         = f.select :status, Product.statuses.map{|key, val| [t(".select.#{key}"), key] }

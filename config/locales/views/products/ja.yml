@@ -10,3 +10,6 @@ ja:
         in_stock: '在庫あり'
         few_in_stock: '残りわずか'
         out_of_stock: '在庫切れ'
+      label:
+        name: '名前'
+        status: 'ステータス'
