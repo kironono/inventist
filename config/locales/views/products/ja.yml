@@ -13,3 +13,6 @@ ja:
       label:
         name: '名前'
         status: 'ステータス'
+      button:
+        update: '更新'
+        cancel: 'キャンセル'
