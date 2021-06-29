@@ -3,6 +3,7 @@
 version: "2"
 services:
   app:
+    platform: "linux/amd64"
     build:
       context: "containers/app"
       dockerfile: "Dockerfile"
@@ -24,6 +25,7 @@ services:
     stdin_open: true
     command: "rails s -b 0.0.0.0 -p 3000"
   db:
+    platform: "linux/amd64"
     build:
       context: "containers/db"
       dockerfile: "Dockerfile"
