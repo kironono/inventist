@@ -22,10 +22,12 @@
         div class="field-label is-normal"
           label class="label"
             | ステータス
-        div class="field-body"
-          div class="field"
-            p class="control select"
-              = f.select :status_eq, Product.statuses.map{|key, val| [t(".select.#{key}"), key] }, include_blank: true
+        div class="field-body is-horizontal"
+          - Product.statuses.each do |status_key, status_val|
+            div class="field level-item"
+              = f.check_box :status_eq_any, { multiple: true}, status_val, nil
+              label for="q_status_eq_any_#{status_key}"
+                = status_key
       div class="field is-horizontal"
         div class="field-label is-normal"
           label class="label"

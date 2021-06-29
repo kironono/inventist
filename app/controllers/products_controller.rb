@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     @search = Product.ransack(params[:q])
+    @search.sorts = 'id asc'
     @products = @search.result.page(params[:page]).per(params[:per])
   end
 
