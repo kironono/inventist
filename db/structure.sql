@@ -45,7 +45,7 @@ CREATE TABLE public.products (
     name character varying NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    status public.product_status NOT NULL
+    status public.product_status DEFAULT 'in_stock'::public.product_status NOT NULL
 );
 
 

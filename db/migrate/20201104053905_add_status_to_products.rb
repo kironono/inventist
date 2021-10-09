@@ -3,7 +3,7 @@ class AddStatusToProducts < ActiveRecord::Migration[6.0]
     execute <<-SQL
       CREATE TYPE product_status AS ENUM ('in_stock', 'few_in_stock', 'out_of_stock')
     SQL
-    add_column :products, :status, :product_status, null: false
+    add_column :products, :status, :product_status, null: false, default: 'in_stock'
   end
 
   def down
