@@ -33,6 +33,8 @@ gem 'slim-rails'
 
 gem 'bulma-rails', '~> 0.9.0'
 
+gem 'net-http'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

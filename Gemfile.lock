@@ -126,6 +126,8 @@ GEM
     mini_portile2 (2.8.1)
     minitest (5.18.0)
     msgpack (1.6.1)
+    net-http (0.3.2)
+      uri
     net-imap (0.3.4)
       date
       net-protocol
@@ -227,6 +229,7 @@ GEM
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uri (0.12.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -259,6 +262,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.2)
+  net-http
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 7.0)
