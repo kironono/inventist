@@ -5,4 +5,7 @@ class Product < ApplicationRecord
   validates :name, length: { maximum: 64 }
   validates :status, inclusion: { in: statuses.keys }
 
+  def self.ransackable_attributes(auth_object = nil)
+    %w(created_at id name status updated_at)
+  end
 end
